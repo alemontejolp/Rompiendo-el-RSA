@@ -1,5 +1,8 @@
 #FUENTE PARA PROBLEMA DE PROGRAMACIÓN.
 
+¡NO! NO ES UN VERDADERO ALGORITMO PARA VULNERAR LA ENCRIPTACIÓN RSA
+ESA COSA ES MUY SEGURA.
+
 El nombre del problema es "Rompiendo el RSA".
 
 El objetivo de este es puramente didáctico. Consiste en intentar
