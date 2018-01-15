@@ -14,17 +14,17 @@ mayores a 64 bits.
 
 El paradigma usado es: programación estructurada.
 
-#Directorio ./management
+#Directorio ./management: \n
 En este directorio está un manejador para generar casos de prueba,
 generar llaves, encriptar, desencriptar, etc., con el fin de facilitar
 la comprovación de los resultados de la solución ideada.
 
-#Directorio ./solution
-Aquí se encuentra una propiesta de solución. Todo lo necesario está en un
+#Directorio ./solution: \n
+Aquí se encuentra una propuesta de solución. Todo lo necesario está en un
 mismo archivo.
 
-#Directorio ./libs
+#Directorio ./libs: \n
 Está la librería usada para el manejador. En concreto es sólo la interfaz
 
-#Directorio ./src
-Está la implementacoón de la librería.
+#Directorio ./src: \n
+Está la implementación de la librería.
