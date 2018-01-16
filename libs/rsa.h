@@ -140,7 +140,35 @@ long long next_prime(void);
  *   El número a factorizar.
  * @return std::vector<long long>
  */
-
 std::vector<long long> factors_of(long long);
+
+/**
+ * @description Encripta un mensaje de texto,
+ *
+ * @param long long
+ *   La llave pública.
+ * @param long long
+ *   El modulo de cifra.
+ * @param string
+ *   El mensaje.
+ * @return std::vector<long long>
+ */
+std::vector<long long> encript(long long, long long, std::string);
+
+/**
+ * @decript Desencripta un mensaje de texto, recibiendo el
+ * criptograma.
+ *
+ * @param long long
+ *   La llave privada.
+ * @param long long
+ *   El módulo de crifra.
+ * @param std::vector<long long>
+ *   El criptograma.
+ * @return std::string
+ */
+std::string decript(long long, long long, std::vector<long long>);
+
+#include "../src/rsa.cpp"
 
 #endif // _RSA_H_
