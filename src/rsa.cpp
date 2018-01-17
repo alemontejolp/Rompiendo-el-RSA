@@ -64,7 +64,7 @@ void generate_prime_numbers(int quantity) {
         current++;
         //std::cout << "[generate_prime_numbers] numero a comprobar si es primo: " << current << ".\n";
         ///Raiz cuadrada para saber cuando parar de comprobar.
-        long this_sqrt = sqrt(current);
+        long long this_sqrt = sqrt(current);
         //std::cout << "[generate_prime_numbers] raiz cuadrada del numero anterior: " << this_sqrt << ".\n";
         ///Mientras el primo actual sea menor o igual a la raiz, comprueba si es primo o no.
         for(int i = 0; prime_numbers[i] <= this_sqrt; i++) {

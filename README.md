@@ -23,7 +23,8 @@ la comprovación de los resultados de la solución ideada.
 #Directorio ./solution:
 
 Aquí se encuentra una propuesta de solución. Todo lo necesario está en un
-mismo archivo.
+mismo archivo. También hay 5 archivos '.in' que pueden ser usados como casos de prueba
+para la solución.
 
 #Directorio ./libs:
 

@@ -156,7 +156,7 @@ std::vector<long long> factors_of(long long);
 std::vector<long long> encript(long long, long long, std::string);
 
 /**
- * @decript Desencripta un mensaje de texto, recibiendo el
+ * @description Desencripta un mensaje de texto, recibiendo el
  * criptograma.
  *
  * @param long long
