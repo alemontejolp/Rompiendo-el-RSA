@@ -37,7 +37,7 @@ int main(void) {
                     cin >> cmd;
 
                     if(cmd == "num") {
-                        throw "Accion aun no disponible.";
+                        exec_decript_num();
                     }
                     else if(cmd == "str") {
                         exec_decript();
