@@ -16,13 +16,13 @@ string data[] = {
     "{'name':'Alexander','message':'Hola, esto es un mensaje secreto.'}",
     "{'name':'Ekaterina','message':'Mensajito... :3'}",
     "{'name':'Sahsa','message':'Mensaje secreto!'}",
-    "{'name':'Brigitte','Hellow wordl!'}",
-    "{'name':'Mikasa','Ya no se que poner aqui. xd'}",
-    "{'name':'Kary','Tengo hambre! xD'}",
-    "{'name':'Ilonka','Otro mensaje secreto.'}",
-    "{'name':'Yui','Este es un mensaje secreto!'}",
-    "{'name':'Kyouko','I can fly! you can fly?'}",
-    "{'name':'Akari','Hello!! :D'}"
+    "{'name':'Brigitte','message':'Hellow wordl!'}",
+    "{'name':'Mikasa','message':'Ya no se que poner aqui. xd'}",
+    "{'name':'Kary','message':'Tengo hambre! xD'}",
+    "{'name':'Ilonka','message':'Otro mensaje secreto.'}",
+    "{'name':'Yui','message':'Este es un mensaje secreto!'}",
+    "{'name':'Kyouko','message':'I can fly! you can fly?'}",
+    "{'name':'Akari','message':'Hello!! :D'}"
 };
 
 int data_size = sizeof(data) / sizeof(string);

@@ -18,6 +18,17 @@ void generate_key_pair(void) {
     cin >> n_keys;
     cout << "Cantidad de primos a generar: ";
     cin >> n_primes;
+    if(n_primes > 7000) {
+        cout << "Es posible que con mas de 7k de primos, el resultado este errado. "
+                  << "Desea continuar aun sabiendo esto [S/n]: ";
+        char comp;
+        cin >> comp;
+        if(comp == 'n' || comp == 'N') {
+            cout << "Creacion de llaves aborada por falta de capacidad y optimizacion.\n";
+            print_line();
+            return;
+        }
+    }
     cout << "Iprimir en archivo de texto [s/n]: ";
     cin >> in_file;
     if(in_file == 's') {
@@ -115,6 +126,17 @@ void generate_test_cases(void) {
     cin >> n_cases;
     cout << "Cantidad de numeros primos a usar: ";
     cin >> n_pn;
+    if(n_pn > 7000) {
+        cout << "Es posible que con mas de 7k de primos, el resultado este errado. "
+                  << "Desea continuar aun sabiendo esto [S/n]: ";
+        char comp;
+        cin >> comp;
+        if(comp == 'n' || comp == 'N') {
+            cout << "Creacion de llaves aborada por falta de capacidad y optimizacion.\n";
+            print_line();
+            return;
+        }
+    }
     cout << "Imprimir en arcvhivo de texto: [S(recomendado)/n]: ";
     cin >> in_file;
 

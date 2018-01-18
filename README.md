@@ -3,7 +3,8 @@
 ¡NO! NO ES UN VERDADERO ALGORITMO PARA VULNERAR LA ENCRIPTACIÓN RSA
 ESA COSA ES MUY SEGURA.
 
-El nombre del problema es "Rompiendo el RSA".
+El nombre del problema es "Rompiendo el RSA". Para leer el problema, ir aquí:
+https://docs.google.com/document/d/1Qry6g86-jX9c6QpcuxeuyXiXgMV4YPPAH9FW4bR0hKg/edit?usp=sharing
 
 El objetivo de este es puramente didáctico. Consiste en intentar
 vulnerar el algoritmo RSA (cuando los valores de los números secretos
@@ -23,8 +24,8 @@ la comprovación de los resultados de la solución ideada.
 #Directorio ./solution:
 
 Aquí se encuentra una propuesta de solución. Todo lo necesario está en un
-mismo archivo. También hay 5 archivos '.in' que pueden ser usados como casos de prueba
-para la solución.
+mismo archivo. También hay 10 archivos '.in' que pueden ser usados como casos de prueba
+para la solución, así como 10 archivos '.out', que son las respectivas salidas para cada archivo '.in'.
 
 #Directorio ./libs:
 
