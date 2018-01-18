@@ -188,6 +188,8 @@ void calculate_private_key(void) {
     vector<long long> f = factors_of(mod);
 
     cout << "Llave privada: " << inv(e, (f[0] - 1) * (f[1] - 1)) << "\n";
+    cout << "p = " << f[0] << "\n";
+    cout << "q = " << f[1] << "\n";
     print_line();
 }
 
@@ -203,6 +205,21 @@ void exec_encript_num(void) {
 
     vector<int> exp = parse_binary(e);
     cout << "El numero cifrado: " << exec_pow(data, exp, mod) << "\n";
+    print_line();
+}
+
+void exec_decript_num(void) {
+    print_line();
+    long long d, mod, data;
+    cout << "Clave privada: ";
+    cin >> d;
+    cout << "Modulo de cifra: ";
+    cin >> mod;
+    cout << "Numero a descifrar: ";
+    cin >> data;
+
+    vector<int> exp = parse_binary(d);
+    cout << "El numero descifrado: " << exec_pow(data, exp, mod) << "\n";
     print_line();
 }
 

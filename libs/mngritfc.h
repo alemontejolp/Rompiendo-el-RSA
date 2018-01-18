@@ -38,6 +38,7 @@ void print_test_case(KeyPair, vector<long long>, ostream* = &cout);
 string rand_data(void);
 void calculate_private_key(void);
 void exec_encript_num(void);
+void exec_decript_num(void);
 void help(void);
 
 #include "../src/mngritfc.cpp"
