@@ -101,7 +101,7 @@ int generate_position(void);
 
 /**
  * @description Ejecuta una potenciación módulo de un número. Usada
- * para la encriptaación, desencriptación o fimado con RSA.
+ * para el cifrado, descifrado o fimado con RSA.
  *
  * Para más información, mirar: https://www.youtube.com/watch?v=C2-kLqWfBaE
  *
