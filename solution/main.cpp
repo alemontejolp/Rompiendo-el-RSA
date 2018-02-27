@@ -8,21 +8,14 @@
 
 using namespace std;
 
-///Variables compartidas por funciones.
-std::vector<long long>  prime_numbers(1, 2);///Contenedor para los numeros primos.
-                  long  prime_it;///Iterador para los números primos.
+///Variable compartida por funciones.
+vector<long long>  prime_numbers(1, 2);///Contenedor para los numeros primos.
+
+///Funciones.
 
 /**
- * @description Genera la cantidad de primos que se le indiquen.
- *
- * @param int
- *   La cantidad de primos a generar.
- */
-void generate_prime_numbers(int);
-
-/**
- * @description Pasa al siguiente primo wn función del iterador.
- * Si no hay más primos, calcula el que sigue y lo retorna.
+ * @description Calcula el siguiente número primo a partir del último
+ * primo calculado.
  *
  * @return long long
  */
@@ -30,18 +23,18 @@ long long next_prime(void);
 
 /**
  * @description Calcula los factores primos de un número
- * que es producto de dos números primos. Si el arumento no
+ * que es producto de dos números primos. Si el argumento no
  * cumple con esta condición, el resultado será errado.
  *
  * @param long long
  *   El número a factorizar.
- * @return std::vector<long long>
+ * @return vector<long long>
  */
-std::vector<long long> factors_of(long long);
+vector<long long> factors_of(long long);
 
 /**
  * @description Calcula el inverso multiplicativo modular de un número
- * dentro de otro mayor a él usando el algoritmo extendido de euclides.
+ * dentro de un cuerpo mayor a él usando el algoritmo extendido de euclides.
  *
  * Para entender mejor esta función, mirar: https://www.youtube.com/watch?v=JGyFkl5_KHM
  *
@@ -58,9 +51,25 @@ long long inv(long long, long long);
  * a su correspondiente notación binaria. Si estas condiciones no se
  * cumplen. el resultado podría estar errado.
  *
- * @return std::vector<int>
+ * @return vector<int>
  */
-std::vector<int> parse_binary(long long);
+vector<int> parse_binary(long long);
+
+/**
+ * @description Ejecuta una potenciación módulo de un número. Usada
+ * para el cifrado, descifrado o fimado con RSA.
+ *
+ * Para más información, mirar: https://www.youtube.com/watch?v=C2-kLqWfBaE
+ *
+ * @param long long
+ *  Número base.
+ * @param vector<int>
+ *  Exponente en binario.
+ * @param long long
+ *  módulo.
+ * @return long long
+ */
+long long exec_pow(long long, vector<int>, long long);
 
 /**
  * @decript Desencripta un mensaje de texto, recibiendo el
@@ -70,11 +79,11 @@ std::vector<int> parse_binary(long long);
  *   La llave privada.
  * @param long long
  *   El módulo de crifra.
- * @param std::vector<long long>
+ * @param vector<long long>
  *   El criptograma.
- * @return std::string
+ * @return string
  */
-std::string decript(long long, long long, std::vector<long long>);
+string decript(long long, long long, vector<long long>);
 
 int main(void) {
     int l;///El tamaño del criptograma.
@@ -109,74 +118,46 @@ int main(void) {
     return 0;
 }
 
-void generate_prime_numbers(int quantity) {
-    ///El último número primo en el vector.
+long long next_prime(void) {
     long long current = prime_numbers[prime_numbers.size() - 1];
-    ///Cantidad de números primos a calcular.
-    for(register int cont = 0; cont < quantity;) {
-        ///Para saber si es primo o no despues de aplicar las operaciones.
-        bool is_prime_number = true;
-        ///El número que sigue. Aun sin saber si es primo o no.
+    bool is_prime;
+
+    do {
+        is_prime = true;
         current++;
-        ///Raiz cuadrada para saber cuando parar de comprobar.
-        long long this_sqrt = sqrt(current);
-        ///Mientras el primo actual sea menor o igual a la raiz, comprueba si es primo o no.
-        for(int i = 0; prime_numbers[i] <= this_sqrt; i++) {
-            ///Si el residuo es 0, no es primo.
+        long long r = sqrt(current);
+
+        for(register int i = 0; r <= prime_numbers[i]; i++) {
+            ///Si es el actual es número compuesto.
             if(!(current % prime_numbers[i])) {
-                is_prime_number = false;
+                ///No es primo y se rompe el bucle inmediato.
+                is_prime = false;
                 break;
             }
         }
-        ///Si es primo, agregalo al vector.
-        if(is_prime_number) {
-            cont++;
-            prime_numbers.push_back(current);
-        }
-    }
+    } while(!is_prime);
+
+    prime_numbers.push_back(current);
+    return current;
 }
 
-long long next_prime(void) {
-    if(prime_it == prime_numbers.size() - 1) {
-        ///Sólo generará 1 númeor primo más.
-        generate_prime_numbers(1);
-    }
+vector<long long> factors_of(long long num) {
+    ///Donde se guardaran los factores primos.
+    vector<long long> factors;
+    long long r; ///El residuo de la divición para saber si la divición es posible.
+    long long p; ///Uno de los factores.
+    long long q; ///El otro factor.
 
-    return prime_numbers[++prime_it];
-}
+    do {
+        p = next_prime();
+        q = num / p;
+        r = num % p;
+    } while(r); ///Seguir mientras "r" tenga algún valor.
 
-std::vector<long long> factors_of(long long num) {
-    std::vector<long long> factors;
-    ///El número primo actual.
-    long long current_prime = prime_numbers[0];
-    ///La posición del vector de primos. La [0] = 2.
-    prime_it = 0;
-    ///El residuo de la divición entre primos. Para saber si es divisible o no.
-    int residue = 1;
+    factors.push_back(p);
+    factors.push_back(q);
 
-    ///Mientras el númeor a factorizar sea distinto de 1.
-    while(num != 1) {
-        residue = num % current_prime;
-
-        if(num < 0 || current_prime < 0 || (num / current_prime) < 0) {
-            throw "Uno de los valores es menor a 0. ERROR!!";
-        }
-
-        ///Si el residuo es 0, el actual es un factor.
-        if(!residue) {
-            ///Lo agrega al vector de factores.
-            factors.push_back(current_prime);
-            ///Actualiza el número.
-            num /= current_prime;
-            ///Por lo que al dividir, el cociente es el otro primo.
-            factors.push_back(num);
-            return factors;
-        }
-        else {
-            ///Si el residuo no es 0, trae el siguiente primo.
-            current_prime = next_prime();
-        }
-    }
+    return factors;
 }
 
 long long inv(long long num, long long body) {
@@ -202,8 +183,8 @@ long long inv(long long num, long long body) {
 }
 
 
-std::vector<int> parse_binary(long long num) {
-    std::vector<int> binary;
+vector<int> parse_binary(long long num) {
+    vector<int> binary;
 
     do {
         binary.push_back(num % 2);
@@ -213,7 +194,7 @@ std::vector<int> parse_binary(long long num) {
     return binary;
 }
 
-long long exec_pow(long long base, std::vector<int> exp, long long mod) {
+long long exec_pow(long long base, vector<int> exp, long long mod) {
     long long current = base;
     long long total = 1;
     for(register int i = 0; i < exp.size(); i++) {
@@ -226,9 +207,9 @@ long long exec_pow(long long base, std::vector<int> exp, long long mod) {
     return total;
 }
 
-std::string decript(long long d, long long n, std::vector<long long> C) {
-    std::vector<int> exp = parse_binary(d);
-    std::string N;
+string decript(long long d, long long n, vector<long long> C) {
+    vector<int> exp = parse_binary(d);
+    string N;
 
     for(register int i = 0; i < C.size(); i++) {
         N.push_back(exec_pow(C[i], exp, n));
