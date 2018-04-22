@@ -1,5 +1,7 @@
 /**
- * Propuesta de solución para el problema: "Rompiendo el RSA."
+ * Propuesta de solución para el problema educativo: "Rompiendo el sistema RSA."
+ * https://omegaup.com/arena/problem/rompiendo-el-sistema-rsa#problems
+ * @author Axel Alexis Montejo Lopez (alemontejo.lp@gmail.com).
  */
 
 #include <iostream>
@@ -8,18 +10,7 @@
 
 using namespace std;
 
-///Variable compartida por funciones.
-vector<long long>  prime_numbers(1, 2);///Contenedor para los numeros primos.
-
 ///Funciones.
-
-/**
- * @description Calcula el siguiente número primo a partir del último
- * primo calculado.
- *
- * @return long long
- */
-long long next_prime(void);
 
 /**
  * @description Calcula los factores primos de un número
@@ -86,6 +77,9 @@ long long exec_pow(long long, vector<int>, long long);
 string decript(long long, long long, vector<long long>);
 
 int main(void) {
+    cin.tie(0);
+    ios_base::sync_with_stdio(0);
+
     int l;///El tamaño del criptograma.
     long long e;///La llave pública.
     long long n;///El módulo de crifra.
@@ -109,7 +103,7 @@ int main(void) {
         ///Calcular la llave privada.
         long long d = inv(e, (p - 1) * (q - 1));
 
-        ///desencriptar.
+        ///descifrar.
         cout << decript(d, n, C) << "\n";
     }
     catch(const char* ex) {
@@ -118,38 +112,15 @@ int main(void) {
     return 0;
 }
 
-long long next_prime(void) {
-    long long current = prime_numbers[prime_numbers.size() - 1];
-    bool is_prime;
-
-    do {
-        is_prime = true;
-        current++;
-        long long r = sqrt(current);
-
-        for(register int i = 0; r <= prime_numbers[i]; i++) {
-            ///Si es el actual es número compuesto.
-            if(!(current % prime_numbers[i])) {
-                ///No es primo y se rompe el bucle inmediato.
-                is_prime = false;
-                break;
-            }
-        }
-    } while(!is_prime);
-
-    prime_numbers.push_back(current);
-    return current;
-}
-
 vector<long long> factors_of(long long num) {
     ///Donde se guardaran los factores primos.
     vector<long long> factors;
-    long long r; ///El residuo de la divición para saber si la divición es posible.
-    long long p; ///Uno de los factores.
+    long long p = 1; ///Uno de los factores.
     long long q; ///El otro factor.
+    long long r; ///El residuo de la divición para saber si la divición es posible.
 
     do {
-        p = next_prime();
+        p++;
         q = num / p;
         r = num % p;
     } while(r); ///Seguir mientras "r" tenga algún valor.
@@ -197,7 +168,7 @@ vector<int> parse_binary(long long num) {
 long long exec_pow(long long base, vector<int> exp, long long mod) {
     long long current = base;
     long long total = 1;
-    for(register int i = 0; i < exp.size(); i++) {
+    for(register int i = 0, l = exp.size(); i < l; i++) {
         if(exp[i]) {
             total = (total * current) % mod;
         }
@@ -211,7 +182,7 @@ string decript(long long d, long long n, vector<long long> C) {
     vector<int> exp = parse_binary(d);
     string N;
 
-    for(register int i = 0; i < C.size(); i++) {
+    for(register int i = 0, l = C.size(); i < l; i++) {
         N.push_back(exec_pow(C[i], exp, n));
     }
 
