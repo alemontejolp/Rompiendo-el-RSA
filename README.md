@@ -1,36 +1,42 @@
-#FUENTE PARA PROBLEMA DE PROGRAMACI”N.
+# FUENTE PARA PROBLEMA DE PROGRAMACI√ìN.
 
-°NO! NO ES UN VERDADERO ALGORITMO PARA VULNERAR LA ENCRIPTACI”N RSA
-ESA COSA ES MUY SEGURA.
+$¬°NO! NO ES UN VERDADERO ALGORITMO PARA VULNERAR EL SISTEMA RSA,
+ESA COSA ES MUY SEGURA.$
 
-El nombre del problema es "Rompiendo el RSA". Para leer el problema, ir aquÌ:
+El nombre del problema es "Rompiendo el sistema RSA". Para leer el problema, ir aqu√≠:
 https://docs.google.com/document/d/1Qry6g86-jX9c6QpcuxeuyXiXgMV4YPPAH9FW4bR0hKg/edit?usp=sharing
 
-El objetivo de este es puramente did·ctico. Consiste en intentar
-vulnerar el algoritmo RSA (cuando los valores de los n˙meros secretos
-'p' y 'q' son pequeÒos) para comprender el funcionamiento de este algoritmo.
+Para poner aprueba tu soluci√≥n, ir aqu√≠:
+https://omegaup.com/arena/problem/rompiendo-el-sistema-rsa#problems
 
-El cÛdigo aquÌ alojado no est· optimizado para manejar n˙meros
+El objetivo de este es puramente educativo. Consiste en intentar
+vulnerar el algoritmo RSA (cuando los valores de los n√∫meros secretos
+'p' y 'q' son peque√±os) para comprender el funcionamiento de este algoritmo.
+
+El c√≥digo aqu√≠ alojado no est√° optimizado para manejar n√∫meros
 mayores a 64 bits.
 
-El paradigma usado es: programaciÛn estructurada.
+El paradigma usado es: programaci√≥n estructurada.
 
-#Directorio ./management:
+# Directorio ./management:
 
-En este directorio est· un manejador para generar casos de prueba,
-generar llaves, encriptar, desencriptar, etc., con el fin de facilitar
-la comprovaciÛn de los resultados de la soluciÛn ideada.
+En este directorio est√° un manejador (tambi√©n podemos llamarle CLI) para generar casos de prueba,
+generar llaves, cifrar, descifrar, etc., con el fin de facilitar
+la comprovaci√≥n de los resultados de la soluci√≥n ideada.
 
-#Directorio ./solution:
+Para ver las opciones, usar el comando "rsa help" en el ejecutable del manejador.
 
-AquÌ se encuentra una propuesta de soluciÛn. Todo lo necesario est· en un
-mismo archivo. TambiÈn hay 10 archivos '.in' que pueden ser usados como casos de prueba
-para la soluciÛn, asÌ como 10 archivos '.out', que son las respectivas salidas para cada archivo '.in'.
+# Directorio ./solution:
 
-#Directorio ./libs:
+Aqu√≠ se encuentra una propuesta de soluci√≥n. Todo lo necesario est√° en un
+mismo archivo. Tambi√©n hay 10 archivos '.in' que pueden ser usados como casos de prueba
+para la soluci√≥n, as√≠ como 10 archivos '.out', que son las respectivas salidas para cada archivo '.in'.
 
-Est· la librerÌa usada para el manejador. En concreto es sÛlo la interfaz
+# Directorio ./libs:
 
-#Directorio ./src:
+Est√° la librer√≠a usada para el manejador. En concreto es el c√≥digo del CLI y el c√≥digo del
+algoritmo.
 
-Est· la implementaciÛn de la librerÌa.
+# Directorio ./src:
+
+Est√° la implementaci√≥n de la librer√≠a.
