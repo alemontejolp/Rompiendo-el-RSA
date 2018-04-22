@@ -18,7 +18,7 @@ mayores a 64 bits.
 
 El paradigma usado es: programación estructurada.
 
-## Directorio ./management:
+## Directorio: ./management
 
 En este directorio está un manejador (también podemos llamarle CLI) para generar casos de prueba,
 generar llaves, cifrar, descifrar, etc., con el fin de facilitar
@@ -26,17 +26,17 @@ la comprovación de los resultados de la solución ideada.
 
 Para ver las opciones, usar el comando "rsa help" en el ejecutable del manejador.
 
-## Directorio ./solution:
+## Directorio: ./solution
 
 Aquí se encuentra una propuesta de solución. Todo lo necesario está en un
 mismo archivo. También hay 10 archivos '.in' que pueden ser usados como casos de prueba
 para la solución, así como 10 archivos '.out', que son las respectivas salidas para cada archivo '.in'.
 
-## Directorio ./libs:
+## Directorio: ./libs
 
 Está la librería usada para el manejador. En concreto es el código del CLI y el código del
 algoritmo.
 
-## Directorio ./src:
+## Directorio: ./src
 
 Está la implementación de la librería.
