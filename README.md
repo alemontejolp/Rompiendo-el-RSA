@@ -1,7 +1,7 @@
 # FUENTE PARA PROBLEMA DE PROGRAMACIÓN.
 
-$ ¡NO! NO ES UN VERDADERO ALGORITMO PARA VULNERAR EL SISTEMA RSA,
-ESA COSA ES MUY SEGURA. $
+**¡NO! NO ES UN VERDADERO ALGORITMO PARA VULNERAR EL SISTEMA RSA,
+ESA COSA ES MUY SEGURA.**
 
 El nombre del problema es "Rompiendo el sistema RSA". Para leer el problema, ir aquí:
 https://docs.google.com/document/d/1Qry6g86-jX9c6QpcuxeuyXiXgMV4YPPAH9FW4bR0hKg/edit?usp=sharing
