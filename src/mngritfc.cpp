@@ -227,7 +227,7 @@ void help(void) {
     print_line();
     cout << "Acciones para ejecutar: \n";
     cout << "Al inicio simpre escribir 'rsa', excepto si se usa el comando 'exit'. Ejemplo: 'rsa encript str'.\n\n";
-    cout << "geygen --> Genera claves RSA.\n";
+    cout << "keygen --> Genera claves RSA.\n";
     cout << "encript --> \n";
     cout << "\tnum --> Encripta un numero.\n";
     cout << "\tstr --> Encripta una cadena de caracteres.\n";

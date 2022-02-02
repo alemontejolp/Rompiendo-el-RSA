@@ -18,13 +18,22 @@ mayores a 64 bits.
 
 El paradigma usado es: programación estructurada.
 
-## Directorio: ./management
+## Directorio: ./manager
 
-En este directorio está un manejador (también podemos llamarle CLI) para generar casos de prueba,
+En este directorio está un manejador (CLI) para generar casos de prueba,
 generar llaves, cifrar, descifrar, etc., con el fin de facilitar
 la comprovación de los resultados de la solución ideada.
 
 Para ver las opciones, usar el comando "rsa help" en el ejecutable del manejador.
+
+Si está en un sistema oprativo tipo POSIX, puede compilar el manejador ejecutando
+el script de BASH `./build.sh`. Recuerde primero darle los permisos de ejecucicón
+con `chmod +x build.sh`
+
+```bash
+chmod +x build.sh
+./build.sh
+```
 
 ## Directorio: ./solution
 
